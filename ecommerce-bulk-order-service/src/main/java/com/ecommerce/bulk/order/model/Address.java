@@ -122,22 +122,6 @@ public class Address
 
 	
 
-	public Address(long id, String houseNumber, String streetAddress, String city, String state, String zipCode,
-			Account account) {
-		super();
-		this.id = id;
-		this.houseNumber = houseNumber;
-		this.streetAddress = streetAddress;
-		this.city = city;
-		this.state = state;
-		this.zipCode = zipCode;
-		this.account = account;
-	}
-
-	public Address() {
-		super();
-	}
-
 	@Override
 	public String toString() {
 		return "Address [id=" + id + ", houseNumber=" + houseNumber + ", streetAddress=" + streetAddress + ", city="
