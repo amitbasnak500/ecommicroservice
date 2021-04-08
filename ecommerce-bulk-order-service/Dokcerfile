@@ -1,0 +1,9 @@
+FROM openjdk:8-jdk-alpine
+
+# For Java 11
+#FROM adoptopenjdk/openjdk11:alpine-jre
+
+# Maven build -> finalName
+ARG JAR_FILE=target/ecommerce.bulk-order-0.0.1-SNAPSHOT.jar
+COPY ${JAR_FILE} ecommerce.bulk-order.jar
+ENTRYPOINT ["java","-jar","ecommerce.bulk-order.jar"]
