@@ -30,7 +30,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.batch.item.file.LineMapper;
 import org.springframework.core.io.ClassPathResource;
 import static com.ecommerce.bulk.order.constants.OrderBatchJobConstant.*;
-import com.ecomerce.bulk.order.component.OrderFieldMapper;
 import com.ecommerce.bulk.order.listener.OrderJobListener;
 import com.ecommerce.bulk.order.model.Order;
 import com.ecommerce.bulk.order.processor.OrderProcessor;
@@ -45,8 +44,6 @@ public class BatchConfig
 	@Autowired
 	StepBuilderFactory stepBuilderFactory;
 	
-	@Autowired
-	OrderFieldMapper fieldMapper;
 	
 	@Value("${app.csv.fileHeaders}")
     private String[] names;
@@ -75,7 +72,7 @@ public class BatchConfig
 	        lineTokenizer.setStrict(false);
 	        lineTokenizer.setNames(names);
 	        defaultLineMapper.setLineTokenizer(lineTokenizer);
-	        defaultLineMapper.setFieldSetMapper(fieldMapper);
+	        defaultLineMapper.setFieldSetMapper(null);
 	        return defaultLineMapper;
 	 }
 	 
