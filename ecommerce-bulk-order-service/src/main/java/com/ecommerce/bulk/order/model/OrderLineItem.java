@@ -90,21 +90,7 @@ public class OrderLineItem
 		this.order = order;
 	}
 
-	public OrderLineItem(long id, Long productId, int quantityOrdered, Double unitPrice, String uom, Order order) {
-		super();
-		this.id = id;
-		this.productId = productId;
-		this.quantityOrdered = quantityOrdered;
-		this.unitPrice = unitPrice;
-		this.uom = uom;
-		this.order = order;
-	}
-
 	
-	public OrderLineItem() {
-		super();
-	}
-
 	@Override
 	public String toString() {
 		return "OrderLineItem [id=" + id + ", productId=" + productId + ", quantityOrdered=" + quantityOrdered
